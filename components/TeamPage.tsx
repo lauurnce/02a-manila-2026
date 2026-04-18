@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { Github, Linkedin, Twitter } from 'lucide-react';
-import { Section, SectionTitle, ScrollObserver } from './Layout';
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { Section, SectionTitle, ScrollObserver } from "./Layout";
 
 /**
  * TeamPage Component
@@ -26,14 +26,14 @@ const directors = [
     role: "Organization Director Head",
     initials: "FK",
     photo: "/team/france-khalil.JPG",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   {
     name: "Marvin Barrios",
     role: "Organization Director Head",
     initials: "MB",
     photo: "/team/marvin-barrios.JPG",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
 ];
 
@@ -45,14 +45,14 @@ const organizers = [
     role: "Technical Lead",
     initials: "LP",
     photo: "/team/lawrence-panes.JPG",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   {
     name: "Dave Aillerr Rivas",
     role: "Technical Lead",
     initials: "DR",
     photo: "/team/dave-rivas.JPG ",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   // Logistics
   {
@@ -60,28 +60,28 @@ const organizers = [
     role: "Logistics Lead",
     initials: "FE",
     photo: "/team/fahad-esmael.JPG",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   {
     name: "Alpie Obas",
     role: "Logistics Officer",
     initials: "AO",
     photo: "/team/alpie-obas.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   {
     name: "Arjhine Ty",
     role: "Logistics Officer",
     initials: "AT",
     photo: "/team/arjhine-ty.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   {
     name: "Chloe Bejar-Fong",
     role: "Logistics Officer",
     initials: "CB",
     photo: "/team/chloe-bejar-fong.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   // Registration
   {
@@ -89,14 +89,14 @@ const organizers = [
     role: "Registration Head",
     initials: "MN",
     photo: "/team/mary-jean-navarro.png",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   {
     name: "Lanz Kristoffer G. Mañalac",
     role: "Registration Officer",
     initials: "LM",
     photo: "/team/lanz-manalac.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   // Media, Marketing & External
   {
@@ -104,14 +104,14 @@ const organizers = [
     role: "Media & Marketing Head",
     initials: "ND",
     photo: "/team/nate-dy.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   {
     name: "Will Vincent Parrone",
     role: "External Head",
     initials: "WP",
     photo: "/team/will-parrone.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   // Emcees / Hosts
   {
@@ -119,32 +119,14 @@ const organizers = [
     role: "Emcee / Host",
     initials: "AI",
     photo: "/team/anam-iqbal.png",
-    social: { twitter: "#", linkedin: "#", github: "#" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
   {
     name: "Larr Gallos",
     role: "Emcee / Host",
     initials: "LG",
     photo: "/team/larr-gallos.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" }
-  },
-];
-
-// ─── SPEAKERS (separate section) ────────────────────────────────
-const speakers = [
-  {
-    name: "Werald Opolento",
-    role: "Speaker",
-    initials: "WO",
-    photo: "/team/werald-opolento.JPG",
-    social: { twitter: "#", linkedin: "#", github: "#" }
-  },
-  {
-    name: "Speaker TBA",
-    role: "Speaker",
-    initials: "??",
-    photo: "",
-    social: { twitter: "", linkedin: "", github: "" }
+    social: { twitter: "#", linkedin: "#", github: "#" },
   },
 ];
 
@@ -157,11 +139,9 @@ type TeamMember = {
   social: { twitter: string; linkedin: string; github: string };
 };
 
-function TeamCard({ member }: { member: TeamMember }) {
+function TeamCard({ member, isLarge = false }: { member: TeamMember; isLarge?: boolean }) {
   return (
-    <div
-      className="p-6 bg-[#0a0a0a] border border-white/5 rounded-xl transition-all duration-300 hover:bg-white/[0.03] hover:border-white/40 hover:shadow-[0_0_15px_rgba(255,255,255,0.06)] flex items-center gap-6"
-    >
+    <div className={`bg-[#0a0a0a] border border-white/5 rounded-xl transition-all duration-300 hover:bg-white/[0.03] hover:border-white/40 hover:shadow-[0_0_15px_rgba(255,255,255,0.06)] flex items-center gap-6 ${isLarge ? "p-8" : "p-6"}`}>
       {/* Large circular photo */}
       <Avatar className="w-24 h-24 shrink-0 bg-white/10 border-2 border-white/10">
         {member.photo && (
@@ -179,16 +159,14 @@ function TeamCard({ member }: { member: TeamMember }) {
       {/* Name, Role, Socials — stacked vertically alongside the photo */}
       <div className="flex flex-col justify-center gap-2 min-h-[96px]">
         <div>
-          <h3 className="text-lg font-bold text-white leading-tight">
+          <h3 className={`font-bold text-white leading-tight ${isLarge ? "text-2xl" : "text-lg"}`}>
             {member.name}
           </h3>
-          <p className="text-sm text-white/40 mt-1">
-            {member.role}
-          </p>
+          <p className={`${isLarge ? "text-base" : "text-sm"} text-white/40 mt-1`}>{member.role}</p>
         </div>
 
         {/* Clickable Social Links */}
-        <div className="flex items-center gap-3 mt-1">
+        <div className={`flex items-center gap-3 ${isLarge ? "mt-2" : "mt-1"}`}>
           {member.social.twitter && (
             <a
               href={member.social.twitter}
@@ -230,19 +208,18 @@ export function TeamPage() {
   return (
     <Section id="team" className="border-b border-border/50">
       <ScrollObserver>
-
         {/* ── ORGANIZING TEAM ── */}
         <div className="mb-20">
-          <div className="mb-12">
+          <div className="mb-12 text-center">
             <SectionTitle className="text-4xl md:text-5xl font-bold text-white mb-2">
               Organizing Team
             </SectionTitle>
           </div>
 
           {/* Directors – 2 cards, centered */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-6 ">
             {directors.map((member) => (
-              <TeamCard key={member.name} member={member} />
+              <TeamCard key={member.name} member={member} isLarge={true} />
             ))}
           </div>
 
@@ -253,23 +230,6 @@ export function TeamPage() {
             ))}
           </div>
         </div>
-
-        {/* ── SPEAKERS ── */}
-        <div>
-          <div className="mb-12">
-            <SectionTitle className="text-4xl md:text-5xl font-bold text-white mb-2">
-              Speakers
-            </SectionTitle>
-          </div>
-
-          {/* Speakers – 2 cards, centered */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {speakers.map((member) => (
-              <TeamCard key={member.name} member={member} />
-            ))}
-          </div>
-        </div>
-
       </ScrollObserver>
     </Section>
   );
