@@ -207,8 +207,11 @@ export function HeroPage() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
             {/* Glassmorphic Shimmer CTA Button */}
-            <button 
-              className="group relative px-10 py-5 bg-white/10 text-white font-black text-xs tracking-[0.3em] uppercase rounded-full border border-white/20 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:border-white/40 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+            <a 
+              href="https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-block px-10 py-5 bg-white/10 text-white font-black text-xs tracking-[0.3em] uppercase rounded-full border border-white/20 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:border-white/40 hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] no-underline"
             >
               {/* Button Shimmer Effect */}
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite] pointer-events-none" />
@@ -221,7 +224,7 @@ export function HeroPage() {
                 }}
               />
               <span className="relative z-10">Register for Manila</span>
-            </button>
+            </a>
 
             <div className="flex flex-col items-start gap-4">
               <span className="text-[10px] font-mono text-white/40 tracking-[0.3em] uppercase">Powered by</span>

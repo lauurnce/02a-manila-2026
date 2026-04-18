@@ -59,7 +59,7 @@ export function InvolvePage() {
           
           <Button 
             className="h-12 px-8 bg-white text-black hover:bg-white/90 font-bold rounded-lg group transition-transform hover:scale-105"
-            onClick={() => window.open('https://vercel.com', '_blank')}
+            onClick={() => window.open('https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw', '_blank')}
           >
             Register Now
             <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />

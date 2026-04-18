@@ -97,7 +97,7 @@ export function Navigation() {
         {/* Action Buttons */}
         <div className="flex items-center gap-4">
           <Button
-            onClick={() => handleNavClick('#get-involved')}
+            onClick={() => window.open('https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw', '_blank')}
             className="hidden md:flex bg-white text-black hover:bg-black hover:text-white border border-white transition-all duration-300 rounded-full px-6 font-black text-[10px] h-8 tracking-widest uppercase"
           >
             Register Now
@@ -131,7 +131,7 @@ export function Navigation() {
             ))}
             <div className="pt-4 border-t border-white/10">
               <Button
-                onClick={() => handleNavClick('#get-involved')}
+                onClick={() => window.open('https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw', '_blank')}
                 className="w-full bg-white text-black h-12 rounded-2xl font-black text-xs tracking-widest uppercase"
               >
                 Register
