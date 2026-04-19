@@ -69,10 +69,10 @@ export function PointerHUD() {
             )} />
           </div>
 
-          {/* Coordinates HUD - Always show subtle version, highlight when hovering */}
+          {/* Coordinates HUD - Hidden by default, shown only on interactive hover */}
           <div className={cn(
             "absolute top-6 left-6 font-mono text-[9px] text-white/60 bg-black/40 backdrop-blur-sm p-2 border border-white/10 rounded overflow-hidden transition-all duration-300",
-            isHoveringLink ? "opacity-100 translate-y-0" : "opacity-40 -translate-y-1"
+            isHoveringLink ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
           )}>
             <div className="flex flex-col gap-1">
               <span>X: {Math.round((mousePos.x + 1) * 500)}</span>

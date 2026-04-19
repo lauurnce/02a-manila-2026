@@ -1,7 +1,7 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { Section, SectionTitle, ScrollObserver } from "./Layout";
 
 /**
@@ -26,14 +26,14 @@ const directors = [
     role: "Organization Director Head",
     initials: "FK",
     photo: "/team/france-khalil.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "https://www.linkedin.com/in/fkromero", github: "https://github.com/FranceKR" },
   },
   {
     name: "Marvin Barrios",
     role: "Organization Director Head",
     initials: "MB",
-    photo: "/team/marvin-barrios.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    photo: "/team/marvin-barrios.PNG",
+    social: { linkedin: "https://www.linkedin.com/in/marvinbarrios/", github: "#" },
   },
 ];
 
@@ -45,14 +45,14 @@ const organizers = [
     role: "Technical Lead",
     initials: "LP",
     photo: "/team/lawrence-panes.JPG",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "https://www.linkedin.com/in/lawrencepanes/", github: "https://github.com/lauurnce" },
   },
   {
     name: "Dave Aillerr Rivas",
     role: "Technical Lead",
     initials: "DR",
     photo: "/team/dave-rivas.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "https://www.linkedin.com/in/dave-aillerr-rivas/", github: "https://github.com/daveaillerr" },
   },
   // Logistics
   {
@@ -60,28 +60,35 @@ const organizers = [
     role: "Logistics Lead",
     initials: "FE",
     photo: "/team/fahad-esmael.JPG",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "https://www.linkedin.com/in/fahad-hadji-esmael-15322b31b/", github: "https://github.com/Hanji-exe" },
   },
   {
     name: "Alpie Obas",
     role: "Logistics Officer",
     initials: "AO",
-    photo: "/team/alpie-obas.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    photo: "/team/alpie-obas.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/agobas", github: "https://github.com/IKiousChase" },
   },
   {
     name: "Arjhine Ty",
     role: "Logistics Officer",
     initials: "AT",
     photo: "/team/arjhine-ty.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "https://www.linkedin.com/in/arrochi", github: "https://github.com/arrogance231" },
   },
   {
     name: "Chloe Bejar-Fong",
     role: "Logistics Officer",
     initials: "CB",
     photo: "/team/chloe-bejar-fong.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "#", github: "#" },
+  },
+  {
+    name: "Nico Ome",
+    role: "Logistics Officer",
+    initials: "NO",
+    photo: "/team/nico-ome.PNG",
+    social: { linkedin: "#", github: "#" },
   },
   // Registration
   {
@@ -89,29 +96,29 @@ const organizers = [
     role: "Registration Head",
     initials: "MN",
     photo: "/team/mary-jean-navarro.png",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "#", github: "#" },
   },
   {
     name: "Lanz Kristoffer G. Mañalac",
     role: "Registration Officer",
     initials: "LM",
     photo: "/team/lanz-manalac.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "#", github: "#" },
   },
   // Media, Marketing & External
   {
     name: "Nate Dy",
     role: "Media & Marketing Head",
     initials: "ND",
-    photo: "/team/nate-dy.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    photo: "/team/nate-dy.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/nate-peralta/", github: "https://github.com/peraltanate" },
   },
   {
     name: "Will Vincent Parrone",
     role: "External Head",
     initials: "WP",
-    photo: "/team/will-parrone.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    photo: "/team/will-parrone.jpeg",
+    social: { linkedin: "#", github: "#" },
   },
   // Emcees / Hosts
   {
@@ -119,14 +126,14 @@ const organizers = [
     role: "Emcee / Host",
     initials: "AI",
     photo: "/team/anam-iqbal.png",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "https://www.linkedin.com/in/anam-mazhar-iqbal-8483601ba?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "#" },
   },
   {
     name: "Larr Gallos",
     role: "Emcee / Host",
     initials: "LG",
     photo: "/team/larr-gallos.jpg",
-    social: { twitter: "#", linkedin: "#", github: "#" },
+    social: { linkedin: "#", github: "#" },
   },
 ];
 
@@ -136,7 +143,7 @@ type TeamMember = {
   role: string;
   initials: string;
   photo: string;
-  social: { twitter: string; linkedin: string; github: string };
+  social: { linkedin: string; github: string };
 };
 
 function TeamCard({ member, isLarge = false }: { member: TeamMember; isLarge?: boolean }) {
@@ -167,16 +174,7 @@ function TeamCard({ member, isLarge = false }: { member: TeamMember; isLarge?: b
 
         {/* Clickable Social Links */}
         <div className={`flex items-center gap-3 ${isLarge ? "mt-2" : "mt-1"}`}>
-          {member.social.twitter && (
-            <a
-              href={member.social.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/30 hover:text-white transition-colors"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-          )}
+
           {member.social.linkedin && (
             <a
               href={member.social.linkedin}
@@ -223,10 +221,12 @@ export function TeamPage() {
             ))}
           </div>
 
-          {/* Rest of the team – 3 per row, grouped by role */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Rest of the team – 3 per row, last row centered */}
+          <div className="flex flex-wrap justify-center gap-6">
             {organizers.map((member) => (
-              <TeamCard key={member.name} member={member} />
+              <div key={member.name} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                <TeamCard member={member} />
+              </div>
             ))}
           </div>
         </div>
