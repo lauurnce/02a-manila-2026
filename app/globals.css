@@ -2,7 +2,18 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@layer base {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
+
+html, body, :root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
 
 :root {
   --background: oklch(1 0 0);
@@ -38,6 +49,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* RGB Brand Accents */
+  --color-brand-red: oklch(0.627 0.194 28.948);
+  --color-brand-green: oklch(0.666 0.179 145.213);
+  --color-brand-blue: oklch(0.588 0.158 241.966);
 }
 
 .dark {
@@ -73,6 +89,11 @@
   --sidebar-accent-foreground: oklch(0.98 0 0);
   --sidebar-border: oklch(0.20 0 0);
   --sidebar-ring: oklch(0.40 0 0);
+
+  /* RGB Brand Accents (Vibrant for Dark Mode) */
+  --color-brand-red: oklch(0.6 0.2 20);
+  --color-brand-green: oklch(0.7 0.15 140);
+  --color-brand-blue: oklch(0.55 0.12 250);
 }
 
 @theme inline {
@@ -117,6 +138,9 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* RGB Brand utility for backgrounds */
+  --bg-brand-rgb: linear-gradient(to right, var(--color-brand-red), var(--color-brand-green), var(--color-brand-blue));
 }
 
 @layer base {

@@ -34,12 +34,15 @@ export function Section({ children, className, id }: SectionProps) {
   );
 }
 
-export function SectionTitle({ children, className }: { children: ReactNode; className?: string }) {
+export function SectionTitle({ children, className, style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
   return (
-    <h2 className={cn(
-      'text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance',
-      className
-    )}>
+    <h2 
+      className={cn(
+        'text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance',
+        className
+      )}
+      style={style}
+    >
       {children}
     </h2>
   );
@@ -93,8 +96,8 @@ export function ScrollObserver({ children, className }: ScrollObserverProps) {
     <div
       ref={ref}
       className={cn(
-        'transition-all duration-700',
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
+        'relative transition-all duration-1000 ease-out',
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12',
         className
       )}
     >

@@ -149,14 +149,16 @@ type TeamMember = {
 
 function TeamCard({ member, isLarge = false }: { member: TeamMember; isLarge?: boolean }) {
   return (
-    <div className={`group/card relative bg-[#0a0a0a]/80 border border-white/5 rounded-xl transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.08),0_0_60px_rgba(255,255,255,0.04)] flex items-center gap-6 overflow-hidden ${isLarge ? "p-8" : "p-6"}`}>
-      {/* Hover gradient overlay */}
-      <div className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-transparent" />
-      {/* Top edge glow on hover */}
-      <div className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+    <div className={`group relative bg-[#0a0a0a] border border-white/5 rounded-sm transition-all duration-300 hover:bg-white/[0.03] hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.02)] flex items-center gap-6 overflow-hidden ${isLarge ? "p-8" : "p-6"}`}>
+      {/* Corner HUD Ornaments */}
+      <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-white/40 transition-colors" />
+      <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-white/40 transition-colors" />
+      
+      {/* Scanline Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
 
       {/* Large circular photo */}
-      <Avatar className="relative z-10 w-24 h-24 shrink-0 bg-white/10 border-2 border-white/10 group-hover/card:border-white/20 transition-all duration-500">
+      <Avatar className="w-24 h-24 shrink-0 bg-white/10 border border-white/10 group-hover:border-white/40 transition-colors">
         {member.photo && (
           <AvatarImage
             src={member.photo}
@@ -172,10 +174,12 @@ function TeamCard({ member, isLarge = false }: { member: TeamMember; isLarge?: b
       {/* Name, Role, Socials — stacked vertically alongside the photo */}
       <div className="relative z-10 flex flex-col justify-center gap-2 min-h-[96px]">
         <div>
-          <h3 className={`font-bold text-white leading-tight ${isLarge ? "text-2xl" : "text-lg"}`}>
+          <h3 className={`font-medium text-white tracking-tight leading-tight ${isLarge ? "text-2xl" : "text-lg"}`}>
             {member.name}
           </h3>
-          <p className={`${isLarge ? "text-base" : "text-sm"} text-white/40 mt-1`}>{member.role}</p>
+          <p className={`${isLarge ? "text-sm" : "text-[11px]"} text-white/40 mt-1 font-mono uppercase tracking-[0.2em]`}>
+            {member.role}
+          </p>
         </div>
 
         {/* Clickable Social Links */}
@@ -224,72 +228,67 @@ export function TeamPage() {
   }, []);
 
   return (
-    <section id="team" className="relative w-full px-4 py-16 md:py-24 lg:py-32 bg-black overflow-hidden border-b border-border/50">
-      {/* ── PREMIUM BACKGROUND ── */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none">
-        {/* Atmospheric radial glows */}
-        <div className="absolute top-[-5%] left-[-10%] w-[50%] h-[50%] opacity-15 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.3)_0%,transparent_70%)] blur-[100px]" />
-        <div className="absolute bottom-[-5%] right-[-10%] w-[50%] h-[50%] opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.25)_0%,transparent_70%)] blur-[80px]" />
-        <div className="absolute top-[40%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] h-[40%] opacity-[0.04] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.4)_0%,transparent_70%)] blur-[60px]" />
+    <Section id="team" className="relative overflow-hidden">
+      {/* RGB Atmospheric Glows */}
+      <div className="absolute top-[10%] right-[-10%] w-[50%] h-[50%] opacity-20 bg-[radial-gradient(circle_at_center,var(--color-brand-green),transparent_70%)] blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[-10%] w-[40%] h-[40%] opacity-15 bg-[radial-gradient(circle_at_center,var(--color-brand-blue),transparent_70%)] blur-[100px] pointer-events-none" />
+      <div className="absolute top-[50%] left-[40%] w-[30%] h-[30%] opacity-10 bg-[radial-gradient(circle_at_center,var(--color-brand-red),transparent_70%)] blur-[100px] pointer-events-none" />
 
-        {/* Subtle grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)
-            `,
-            backgroundSize: "80px 80px",
-          }}
-        />
-
-        {/* Floating particles */}
-        <div className="absolute inset-0">
-          {particles.map((particle) => (
-            <div
-              key={particle.id}
-              className="absolute w-[1.5px] h-[1.5px] bg-white rounded-full animate-pulse"
-              style={{
-                top: particle.top,
-                left: particle.left,
-                opacity: particle.opacity,
-                animationDelay: particle.delay,
-              }}
-            />
-          ))}
-        </div>
+      {/* Floating particles */}
+      <div className="absolute inset-0 pointer-events-none select-none">
+        {particles.map((particle) => (
+          <div
+            key={particle.id}
+            className="absolute w-[1.5px] h-[1.5px] bg-white rounded-full animate-pulse"
+            style={{
+              top: particle.top,
+              left: particle.left,
+              opacity: particle.opacity,
+              animationDelay: particle.delay,
+            }}
+          />
+        ))}
       </div>
 
-      {/* ── CONTENT ── */}
-      <div className="relative z-10 mx-auto max-w-6xl">
-        <ScrollObserver>
-          {/* ── ORGANIZING TEAM ── */}
-          <div className="mb-20">
-            <div className="mb-12 text-center">
-              <SectionTitle className="text-4xl md:text-5xl font-bold text-white mb-2">
-                Organizing Team
-              </SectionTitle>
-            </div>
-
-            {/* Directors – 2 cards, centered */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-6">
-              {directors.map((member) => (
-                <TeamCard key={member.name} member={member} isLarge={true} />
-              ))}
-            </div>
-
-            {/* Rest of the team – 3 per row, last row centered */}
-            <div className="flex flex-wrap justify-center gap-6">
-              {organizers.map((member) => (
-                <div key={member.name} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
-                  <TeamCard member={member} />
-                </div>
-              ))}
+      <ScrollObserver>
+        {/* ── ORGANIZING TEAM ── */}
+        <div className="mb-20">
+          <div className="mb-16 text-center">
+            <SectionTitle 
+              className="text-4xl md:text-6xl lg:text-7xl font-sans font-medium tracking-tight text-white mb-2"
+              style={{
+                WebkitMaskImage: "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
+                maskImage: "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
+              }}
+            >
+              Organizing Team
+            </SectionTitle>
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <div className="h-px w-12 bg-white/10" />
+              <span className="text-[10px] font-mono text-white/40 tracking-[0.4em] uppercase">
+                The Architects
+              </span>
+              <div className="h-px w-12 bg-white/10" />
             </div>
           </div>
-        </ScrollObserver>
-      </div>
-    </section>
+
+          {/* Directors – 2 cards, centered */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-6">
+            {directors.map((member) => (
+              <TeamCard key={member.name} member={member} isLarge={true} />
+            ))}
+          </div>
+
+          {/* Rest of the team – 3 per row, last row centered */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {organizers.map((member) => (
+              <div key={member.name} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                <TeamCard member={member} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </ScrollObserver>
+    </Section>
   );
 }
