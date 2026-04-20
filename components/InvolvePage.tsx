@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Section, SectionTitle, ScrollObserver } from "./Layout";
+import { GET_INVOLVED, LOGISTICS } from "@/lib/data";
 
 /**
  * InvolvePage Component
@@ -11,23 +12,7 @@ import { Section, SectionTitle, ScrollObserver } from "./Layout";
  * Features a 3-column grid and a bottom registration CTA.
  */
 
-const involvementOptions = [
-  {
-    title: "Join as a Participant",
-    description:
-      "Build your AI agent idea from scratch. No experience necessary—just bring your ideas and determination.",
-  },
-  {
-    title: "Partner with Us",
-    description:
-      "Collaborate with Vercel and reach thousands of developers building AI agents. Showcase your platform.",
-  },
-  {
-    title: "Sponsor the Event",
-    description:
-      "Support the next generation of AI builders. Connect with talented engineers and build brand visibility.",
-  },
-];
+const involvementOptions = GET_INVOLVED.options;
 
 export function InvolvePage() {
   return (
@@ -57,7 +42,7 @@ export function InvolvePage() {
           {involvementOptions.map((option) => (
             <div
               key={option.title}
-              className="group relative p-8 bg-white/[0.02] border border-white/5 rounded-sm transition-all hover:bg-white/[0.05] hover:border-white/20 flex flex-col h-full overflow-hidden"
+              className="group relative p-8 bg-white/2 border border-white/5 rounded-sm transition-all hover:bg-white/5 hover:border-white/20 flex flex-col h-full overflow-hidden"
             >
               {/* Corner HUD Ornaments */}
               <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-white/40 transition-colors" />
@@ -71,7 +56,7 @@ export function InvolvePage() {
               </p>
 
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-tr from-white/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             </div>
           ))}
         </div>
@@ -92,14 +77,14 @@ export function InvolvePage() {
             <button
               onClick={() =>
                 window.open(
-                  "https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw",
+                  LOGISTICS.registrationUrl,
                   "_blank",
                 )
               }
               className="group relative inline-flex items-center gap-4 px-12 py-5 bg-white text-black font-mono font-bold text-[11px] tracking-[0.4em] uppercase rounded-sm overflow-hidden transition-all duration-300 hover:bg-white/90 hover:scale-[1.03] cursor-pointer"
             >
               {/* Shimmer */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
               <span className="relative z-10">REGISTER NOW</span>
               <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>

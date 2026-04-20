@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Section, SectionTitle, ScrollObserver } from "./Layout";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { EVENT_DETAILS } from "@/lib/data";
 
 /**
  * EventPage Component
@@ -20,67 +21,19 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
  * Features a 4-column breakdown of participation, activities, rewards, and format.
  */
 
-const eventHighlights = [
-  {
-    icon: <Users className="w-8 h-8 text-white/40" />,
-    title: "Who Should Join",
-    items: [
-      "Software engineers",
-      "Data engineers",
-      "Indie hackers",
-      "Startup founders",
-    ],
-  },
-  {
-    icon: <Code className="w-8 h-8 text-white/40" />,
-    title: "What You'll Do",
-    items: [
-      "Build AI agents using v0 + Vercel",
-      "Deploy a working product",
-      "Collaborate with developers globally",
-      "Learn cutting-edge AI tools",
-    ],
-  },
-  {
-    icon: <Trophy className="w-8 h-8 text-white/40" />,
-    title: "Rewards",
-    items: [
-      "Global prizes worth $6,000+",
-      "Networking opportunities",
-      "Mentorship from Vercel team",
-      "Showcase your work globally",
-    ],
-  },
-  {
-    icon: <Zap className="w-8 h-8 text-white/40" />,
-    title: "Format",
-    items: [
-      "Solo participation (no teams)",
-      "One-day intensive build",
-      "Live event in Metro Manila",
-      "Online participation available",
-    ],
-  },
-];
+const highlightIcons: Record<string, React.ReactNode> = {
+  "Who Should Join": <Users className="w-8 h-8 text-white/40" />,
+  "What You'll Do": <Code className="w-8 h-8 text-white/40" />,
+  "Rewards": <Trophy className="w-8 h-8 text-white/40" />,
+  "Format": <Zap className="w-8 h-8 text-white/40" />,
+};
 
-const featuredSpeakers = [
-  {
-    id: 2,
-    name: "Werald Opolento",
-    role: "Speaker",
-    topic: "What I've built with v0",
-    bio: "Werald specializes in building cutting-edge autonomous agents and LLM orchestration. Catch his session as he dives deep into practical tool-use and continuous reasoning loops for actual production environments.",
-    image: "/team/werald-opolento.jpg",
-  },
-  {
-    id: 1,
-    name: "Marvin Erosa",
-    role: "Speaker",
-    topic: "Intro to Vercel & v0",
-    bio: "A software engineer at Accenture and v0 Ambassador, he is a hackathon champion and builder of impactful systems—from autonomous driving and EV prototypes to environmental monitoring. He also leads and builds communities like ICPEP, CyberPH, PUP Hygears, and GDG, empowering the next generation of engineers.",
-    image: "/team/marvin_erosa.jpg",
-  },
-];
+const eventHighlights = EVENT_DETAILS.highlights.map(h => ({
+  ...h,
+  icon: highlightIcons[h.title] || <Zap className="w-8 h-8 text-white/40" />
+}));
+
+const featuredSpeakers = EVENT_DETAILS.speakers;
 
 export function EventPage() {
   const [currentSpeaker, setCurrentSpeaker] = useState(0);

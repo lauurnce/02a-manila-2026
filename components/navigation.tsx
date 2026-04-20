@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { LOGISTICS, HERO } from '@/lib/data';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 
@@ -70,7 +71,7 @@ export function Navigation() {
       )}
     >
       {/* RGB Brand Line (Premium Accent) - Absolute Top */}
-      <div className="absolute top-0 left-0 w-full h-[2px] z-[70] flex">
+      <div className="absolute top-0 left-0 w-full h-[2px] z-70 flex">
         <div className="flex-1 h-full opacity-70" style={{ background: 'var(--color-brand-red)' }} />
         <div className="flex-1 h-full opacity-70" style={{ background: 'var(--color-brand-green)' }} />
         <div className="flex-1 h-full opacity-70" style={{ background: 'var(--color-brand-blue)' }} />
@@ -89,19 +90,24 @@ export function Navigation() {
             >
               {/* The Brand Triangle */}
               <div 
-                className="w-4 h-4 bg-white transition-transform duration-500 group-hover:rotate-[360deg] shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                className="w-4 h-4 bg-white transition-transform duration-500 group-hover:rotate-360 shadow-[0_0_15px_rgba(255,255,255,0.2)]"
                 style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
               />
-              <span className="text-[11px] font-mono font-bold text-white tracking-[0.3em] uppercase">
-                Zero to Agent
-              </span>
+              <div className="flex flex-col items-start leading-none gap-0.5">
+                <span className="text-[12px] font-bold text-white tracking-[0.2em] uppercase">
+                  {LOGISTICS.eventName}
+                </span>
+                <span className="text-[8px] font-mono text-white/30 tracking-[0.4em] uppercase">
+                  {HERO.tagline}
+                </span>
+              </div>
             </button>
           </div>
 
           {/* Centered Pill Navigation (Refined) */}
           <div className="hidden md:flex items-center gap-1 px-1 py-1 rounded-sm bg-white/5 border border-white/5 backdrop-blur-sm relative group/nav">
             {/* Subtle Scanline on Nav */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent -translate-x-full group-hover/nav:animate-[shimmer_3s_infinite] pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/3 to-transparent -translate-x-full group-hover/nav:animate-[shimmer_3s_infinite] pointer-events-none" />
 
             {navItems.map((item) => (
               <button
@@ -129,21 +135,23 @@ export function Navigation() {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-4">
-            <button
-              onClick={() => window.open('https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw', '_blank')}
+            <a
+              href={LOGISTICS.registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:flex relative group px-10 py-3 bg-white hover:bg-white/90 rounded-sm overflow-hidden transition-all duration-300 cursor-pointer items-center gap-2"
             >
               {/* Scanning Shimmer */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
               
               <span className="relative z-10 text-black font-mono font-bold text-[10px] tracking-[0.4em] uppercase">
-                REGISTER
+                {HERO.ctaText}
               </span>
 
               {/* Corner HUD Markers in black */}
               <div className="absolute top-0 left-0 w-1.5 h-1.5 border-t border-l border-black/20 group-hover:border-black/40 transition-colors" />
               <div className="absolute bottom-0 right-0 w-1.5 h-1.5 border-b border-r border-black/20 group-hover:border-black/40 transition-colors" />
-            </button>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -155,11 +163,23 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* Scroll Progress Bar */}
+        {/* Scroll Progress Bar (Enhanced RGB Gradient) */}
         <div className="w-full h-[2px] bg-white/5 relative">
           <div
-            className="absolute top-0 left-0 h-full transition-all duration-150 ease-out bg-white shadow-[0_0_8px_rgba(255,255,255,0.4)]"
-            style={{ width: `${scrollProgress}%` }}
+            className="absolute top-0 left-0 h-full transition-all duration-150 ease-out shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+            style={{ 
+              width: `${scrollProgress}%`,
+              background: 'linear-gradient(to right, var(--color-brand-red), var(--color-brand-green), var(--color-brand-blue))',
+              boxShadow: '0 0 10px rgba(255,255,255,0.1)'
+            }}
+          />
+          {/* Subtle Secondary Glow Layer for RGB depth */}
+          <div
+            className="absolute top-0 left-0 h-full transition-all duration-150 ease-out opacity-30 blur-[2px]"
+            style={{ 
+              width: `${scrollProgress}%`,
+              background: 'linear-gradient(to right, var(--color-brand-red), var(--color-brand-green), var(--color-brand-blue))'
+            }}
           />
         </div>
       </div>
@@ -182,10 +202,10 @@ export function Navigation() {
             ))}
             <div className="pt-4 border-t border-white/10">
               <Button
-                onClick={() => window.open('https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw', '_blank')}
+                onClick={() => window.open(LOGISTICS.registrationUrl, '_blank')}
                 className="w-full bg-white text-black h-12 rounded-sm font-black text-[10px] tracking-widest uppercase"
               >
-                Register
+                {HERO.ctaText}
               </Button>
             </div>
           </div>

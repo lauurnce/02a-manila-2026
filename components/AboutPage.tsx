@@ -8,6 +8,7 @@ import {
   SectionDescription,
   ScrollObserver,
 } from "./Layout";
+import { ABOUT, LOGISTICS } from "@/lib/data";
 
 export function AboutPage() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -108,7 +109,7 @@ export function AboutPage() {
                   ))}
                 </div>
                 <span className="font-mono text-[9px] text-white/30 tracking-[0.5em] uppercase font-bold">
-                  [MISSION_INTELLIGENCE]
+                  {ABOUT.intelLabel}
                 </span>
               </div>
 
@@ -121,41 +122,17 @@ export function AboutPage() {
                       "linear-gradient(to right, white 60%, rgba(255,255,255,0.3) 100%)",
                   }}
                 >
-                  Zero to Agent Manila
+                  {ABOUT.missionTitle}
                 </span>
               </SectionTitle>
 
               <SectionDescription className="text-white/40 font-mono !text-[12px] md:!text-[12px] leading-relaxed tracking-wide mb-8 uppercase max-w-xl">
-                A 7-day high-performance sprint designed for the next generation
-                of builders. synchronizing across global borders to architect,
-                develop, and deploy autonomous intelligence at scale.
+                {ABOUT.missionDescription}
               </SectionDescription>
             </div>
 
             <div className="grid gap-4">
-              {[
-                {
-                  label: "SYS.01",
-                  title: "Global Impact",
-                  desc: "20+ countries. 1 synchronized build week.",
-                  id: "IMPACT",
-                  progress: 72,
-                },
-                {
-                  label: "SYS.02",
-                  title: "Technical Focus",
-                  desc: "Agentic workflows and LLM orchestration.",
-                  id: "TECH",
-                  progress: 89,
-                },
-                {
-                  label: "SYS.03",
-                  title: "Ship Culture",
-                  desc: "Concept to deployment in < 18 hours.",
-                  id: "SHIP",
-                  progress: 100,
-                },
-              ].map((item, i) => (
+              {ABOUT.stats.map((item, i) => (
                 <div
                   key={i}
                   className="group relative p-5 bg-white/[0.01] border border-white/5 rounded-sm hover:bg-white/[0.03] hover:border-white/10 transition-all duration-500"
@@ -170,7 +147,7 @@ export function AboutPage() {
                           key={idx}
                           className={cn(
                             "w-1 h-3 rounded-[1px] transition-colors duration-500",
-                            idx < item.progress / 20
+                            idx < (5 - i) // Visual progress variability
                               ? "bg-white/20 group-hover:bg-white/40"
                               : "bg-white/5",
                           )}
@@ -184,7 +161,7 @@ export function AboutPage() {
                       {item.title}
                     </h4>
                     <p className="text-white/30 text-[10px] font-mono leading-relaxed group-hover:text-white/50 transition-colors">
-                      {item.desc}
+                      {item.description}
                     </p>
                   </div>
 
@@ -253,7 +230,7 @@ export function AboutPage() {
                   <span className="text-white/60 font-bold tracking-widest">
                     [STRATEGIC_COORD]
                   </span>
-                  <span className="lowercase">leap studios, manila</span>
+                  <span className="lowercase">{LOGISTICS.venue.name}, {LOGISTICS.venue.location}</span>
                 </div>
               </div>
 

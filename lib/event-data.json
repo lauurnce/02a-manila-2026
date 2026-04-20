@@ -1,0 +1,217 @@
+{
+  "logistics": {
+    "eventName": "Zero to Agent",
+    "eventSubtitle": "02A / GLOBAL BUILD WEEK",
+    "chapter": "Manila Chapter",
+    "dates": "April 20–27, 2026",
+    "registrationUrl": "https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw",
+    "venue": {
+      "name": "LEAP Studios",
+      "location": "BGC, Taguig, Metro Manila",
+      "coordinates": "14.5461983, 121.0163709"
+    }
+  },
+  "hero": {
+    "tagline": "v0.1_Manila",
+    "title": "Zero to Agent",
+    "description": "The ultimate 7-day sprint to build, deploy, and scale autonomous agents. Join the world's most ambitious builders in Manila for a week of pure execution.",
+    "ctaText": "REGISTER NOW"
+  },
+  "about": {
+    "intelLabel": "[MISSION_INTELLIGENCE]",
+    "missionTitle": "Zero to Agent Manila",
+    "missionDescription": "A 7-day high-performance sprint designed for the next generation of builders. synchronizing across global borders to architect, develop, and deploy autonomous intelligence at scale.",
+    "stats": [
+      { "label": "SYS.01", "title": "Global Impact", "description": "20+ countries. 1 synchronized build week." },
+      { "label": "SYS.02", "title": "Technical Focus", "description": "Agentic workflows and LLM orchestration." },
+      { "label": "SYS.03", "title": "Ship Culture", "description": "Concept to deployment in < 18 hours." }
+    ]
+  },
+  "eventDetails": {
+    "highlights": [
+      {
+        "title": "Who Should Join",
+        "items": ["Software engineers", "Data engineers", "Indie hackers", "Startup founders"]
+      },
+      {
+        "title": "What You'll Do",
+        "items": ["Build AI agents using v0 + Vercel", "Deploy a working product", "Collaborate with developers globally", "Learn cutting-edge AI tools"]
+      },
+      {
+        "title": "Rewards",
+        "items": ["Global prizes worth $6,000+", "Networking opportunities", "Mentorship from Vercel team", "Showcase your work globally"]
+      },
+      {
+        "title": "Format",
+        "items": ["Solo participation (no teams)", "One-day intensive build", "Live event in Metro Manila", "Online participation available"]
+      }
+    ],
+    "speakers": [
+      {
+        "id": 1,
+        "name": "Werald Opolento",
+        "role": "Speaker",
+        "topic": "What I've built with v0",
+        "bio": "Werald specializes in building cutting-edge autonomous agents and LLM orchestration. Catch his session as he dives deep into practical tool-use and continuous reasoning loops for actual production environments.",
+        "image": "/team/werald-opolento.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Marvin Erosa",
+        "role": "Speaker",
+        "topic": "Intro to Vercel & v0",
+        "bio": "A software engineer at Accenture and v0 Ambassador, he is a hackathon champion and builder of impactful systems—from autonomous driving and EV prototypes to environmental monitoring.",
+        "image": "/team/marvin_erosa.jpg"
+      }
+    ]
+  },
+  "getInvolved": {
+    "options": [
+      { "title": "Join as a Participant", "description": "Build your AI agent idea from scratch. No experience necessary—just bring your ideas and determination." },
+      { "title": "Partner with Us", "description": "Collaborate with Vercel and reach thousands of developers building AI agents. Showcase your platform." },
+      { "title": "Sponsor the Event", "description": "Support the next generation of AI builders. Connect with talented engineers and build brand visibility." }
+    ]
+  },
+  "footer": {
+    "socialLinks": {
+      "twitter": "#",
+      "linkedin": "#",
+      "github": "#",
+      "email": "mailto:hello@example.com"
+    },
+    "resourceLinks": [
+      { "label": "Vercel Intelligence", "url": "#" },
+      { "label": "v0 Generator", "url": "#" },
+      { "label": "Core Documentation", "url": "#" }
+    ]
+  },
+  "team": {
+    "directors": [
+      {
+        "name": "France Khalil",
+        "role": "Organization Director Head",
+        "initials": "FK",
+        "photo": "/team/france-khalil.jpg",
+        "social": { "linkedin": "https://www.linkedin.com/in/fkromero", "github": "https://github.com/FranceKR" }
+      },
+      {
+        "name": "Marvin Barrios",
+        "role": "Organization Director Head",
+        "initials": "MB",
+        "photo": "/team/marvin-barrios.PNG",
+        "social": { "linkedin": "https://www.linkedin.com/in/marvinbarrios/" }
+      }
+    ],
+    "organizers": [
+      {
+        "name": "Lawrence Panes",
+        "role": "Technical Head",
+        "initials": "LP",
+        "photo": "/team/lawrence-panes.JPG",
+        "social": { "linkedin": "https://www.linkedin.com/in/lawrencepanes/", "github": "https://github.com/lauurnce" }
+      },
+      {
+        "name": "Dave Aillerr Rivas",
+        "role": "Technical Head",
+        "initials": "DR",
+        "photo": "/team/dave-rivas.jpg",
+        "social": { "linkedin": "https://www.linkedin.com/in/dave-aillerr-rivas/", "github": "https://github.com/daveaillerr" }
+      },
+      {
+        "name": "Fahad Hadji Esmael",
+        "role": "Logistics Head",
+        "initials": "FE",
+        "photo": "/team/fahad-esmael.JPG",
+        "social": { "linkedin": "https://www.linkedin.com/in/fahad-hadji-esmael-15322b31b/", "github": "https://github.com/Hanji-exe" }
+      },
+      {
+        "name": "Alpie Obas",
+        "role": "Logistics Officer",
+        "initials": "AO",
+        "photo": "/team/alpie-obas.JPG",
+        "social": { "linkedin": "https://www.linkedin.com/in/agobas", "github": "https://github.com/IKiousChase" }
+      },
+      {
+        "name": "Arjhine Ty",
+        "role": "Logistics Officer",
+        "initials": "AT",
+        "photo": "/team/arjhine-ty.JPG",
+        "social": { "linkedin": "https://www.linkedin.com/in/arrochi", "github": "https://github.com/arrogance231" }
+      },
+      {
+        "name": "Nico Ome",
+        "role": "Logistics Officer",
+        "initials": "NO",
+        "photo": "/team/nico-ome.PNG",
+        "social": { "linkedin": "https://www.linkedin.com/in/angome" }
+      },
+      {
+        "name": "Mary Jean Navarro",
+        "role": "Registration Head",
+        "initials": "MN",
+        "photo": "/team/mary-jean-navarro.png",
+        "social": { "linkedin": "https://www.linkedin.com/in/goingmeri/", "github": "https://github.com/goingmeri" }
+      },
+      {
+        "name": "Lanz Kristoffer G. Mañalac",
+        "role": "Registration Officer",
+        "initials": "LM",
+        "photo": "/team/lanz-manalac.JPG",
+        "social": { "linkedin": "https://ph.linkedin.com/in/lanz-kristoffer-ma%C3%B1alac-b485b3327", "github": "https://github.com/lanzmanalac" }
+      },
+      {
+        "name": "Nate Dy",
+        "role": "Media & Marketing Head",
+        "initials": "ND",
+        "photo": "/team/nate-dy.JPG",
+        "social": { "linkedin": "https://www.linkedin.com/in/nate-peralta/", "github": "https://github.com/peraltanate" }
+      },
+      {
+        "name": "Ven Murillo",
+        "role": "Media & Marketing Officer",
+        "initials": "VM",
+        "photo": "/team/ven-murillo.JPG",
+        "social": { "linkedin": "https://www.linkedin.com/in/ven-vincent-murillo" }
+      },
+      {
+        "name": "Will Vincent Parrone",
+        "role": "External Head",
+        "initials": "WP",
+        "photo": "/team/will-parrone.jpeg",
+        "social": { "linkedin": "https://www.linkedin.com/in/will-vincent-parrone-8763311ba/", "github": "https://github.com/KyahWill" }
+      },
+      {
+        "name": "Anam Iqbal",
+        "role": "Emcee / Host",
+        "initials": "AI",
+        "photo": "/team/anam-iqbal.png",
+        "social": { "linkedin": "https://www.linkedin.com/in/anam-mazhar-iqbal-8483601ba?utm_source=share_via&utm_content=profile&utm_medium=member_android", "github": "#" }
+      },
+      {
+        "name": "Larr Gallos",
+        "role": "Emcee / Host",
+        "initials": "LG",
+        "photo": "/team/larr-gallos.jpg",
+        "social": { "linkedin": "#", "github": "#" }
+      }
+    ]
+  },
+  "policies": [
+    {
+      "title": "Code of Conduct",
+      "content": "We are committed to providing a friendly, safe, and welcoming environment for all, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, or nationality."
+    },
+    {
+      "title": "Participation Rules",
+      "content": "All projects built during the event must be new. Use of open-source frameworks and libraries is encouraged. All participants must be present (physically or virtually) for the duration of the build day."
+    },
+    {
+      "title": "Intellectual Property",
+      "content": "Participants own the intellectual property of the projects they build during Zero to Agent Manila. We encourage sharing and open-sourcing projects to benefit the global developer community."
+    },
+    {
+      "title": "Support & Mentorship",
+      "content": "Technical mentors will be available throughout the day. However, participants are expected to have a baseline understanding of development and AI tools."
+    }
+  ]
+}
