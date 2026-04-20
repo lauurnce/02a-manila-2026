@@ -1,6 +1,7 @@
 'use client';
 
 import { Twitter, Linkedin, Github, Mail } from 'lucide-react';
+import { FOOTER, LOGISTICS, HERO } from '@/lib/data';
 
 export function Footer() {
   return (
@@ -25,19 +26,18 @@ export function Footer() {
                   style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
                 />
                 <h3 className="text-xl font-medium text-white tracking-widest uppercase">
-                  Zero to Agent
+                  {LOGISTICS.eventName}
                 </h3>
               </div>
               <div className="flex items-center gap-3">
                 <div className="h-px w-8 bg-white/20" />
                 <span className="text-[10px] font-mono text-white/40 tracking-[0.4em] uppercase">
-                  v0.1_Manila
+                  {HERO.tagline}
                 </span>
               </div>
             </div>
             <p className="text-white/40 text-[11px] font-mono leading-relaxed max-w-xs uppercase tracking-wider">
-              The ultimate 7-day sprint to build and scale autonomous intelligence.
-              Join the world's most ambitious builders in Manila.
+              {HERO.description}
             </p>
           </div>
 
@@ -72,16 +72,15 @@ export function Footer() {
               Resources
             </h4>
             <ul className="space-y-4">
-              {[
-                { label: 'Vercel Intelligence', color: 'var(--color-brand-red)' },
-                { label: 'v0 Generator', color: 'var(--color-brand-green)' },
-                { label: 'Core Documentation', color: 'var(--color-brand-blue)' },
-              ].map((item) => (
+              {FOOTER.resourceLinks.map((item, idx) => (
                 <li key={item.label}>
-                  <a href="#" className="group flex items-center gap-3 text-white/40 hover:text-white transition-colors">
+                  <a href={item.url} className="group flex items-center gap-3 text-white/40 hover:text-white transition-colors">
                     <div
                       className="w-1.5 h-1.5"
-                      style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)', background: item.color }}
+                      style={{ 
+                        clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)', 
+                        background: idx === 0 ? 'var(--color-brand-red)' : idx === 1 ? 'var(--color-brand-green)' : 'var(--color-brand-blue)' 
+                      }}
                     />
                     <span className="text-xs font-mono uppercase tracking-widest">{item.label}</span>
                   </a>
@@ -99,7 +98,7 @@ export function Footer() {
               {[Twitter, Linkedin, Github, Mail].map((Icon, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={i === 0 ? FOOTER.socialLinks.twitter : i === 1 ? FOOTER.socialLinks.linkedin : i === 2 ? FOOTER.socialLinks.github : FOOTER.socialLinks.email}
                   className="p-3 bg-white/5 border border-white/10 rounded-sm text-white/40 hover:text-white hover:border-white/30 transition-all group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -114,7 +113,7 @@ export function Footer() {
         <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-2">
             <p className="text-[10px] font-mono text-white/20 uppercase tracking-[0.3em]">
-              © 2026 Zero to Agent // Manila Chapter
+              © {new Date().getFullYear()} {LOGISTICS.eventName} // {LOGISTICS.chapter}
             </p>
             <div className="flex items-center gap-4">
               <div className="h-px w-4 bg-white/10" />

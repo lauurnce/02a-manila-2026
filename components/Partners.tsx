@@ -2,11 +2,32 @@
 
 import { Section, SectionTitle, ScrollObserver } from "./Layout";
 
+
+// ─── MAIN COMPONENT ──────────────────────────────────────────────
 export function Partners() {
   return (
     <Section id="partners" className="relative overflow-hidden">
+      {/* ... glows ... */}
+      <div
+        aria-hidden="true"
+        className="absolute top-[15%] left-[5%] w-[35%] h-[50%] opacity-[0.08] blur-[120px] pointer-events-none select-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, #4ade80, transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute top-[15%] right-[5%] w-[35%] h-[50%] opacity-[0.08] blur-[120px] pointer-events-none select-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, #818cf8, transparent 70%)",
+        }}
+      />
+
       <ScrollObserver>
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
+          {/* ── SECTION HEADER ── */}
           <div className="text-center mb-16">
             <SectionTitle
               className="text-4xl md:text-6xl lg:text-7xl font-sans font-medium tracking-tight text-white mb-2"
@@ -17,59 +38,91 @@ export function Partners() {
                   "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
               }}
             >
-              Special Thanks to our Sponsors and Partners
+              Sponsors and Partners
             </SectionTitle>
-            <div className="mt-16">
-              {/* Text Row */}
-              <div className="flex items-center justify-center gap-16 mb-8">
-                <p className="text-[16px] font-mono text-white/40 tracking-[0.6em] uppercase text-center w-auto">
-                  Powered by
-                </p>
-                <p className="text-[16px] font-mono text-white/40 tracking-[0.6em] uppercase text-center w-auto">
-                  Venue Partner
-                </p>
+            <div className="flex flex-col items-center gap-5 mt-10">
+              <div className="flex items-center gap-8">
+                <div className="h-px w-32 bg-white/20" />
+                <span className="text-sm md:text-base font-mono text-white tracking-[0.5em] uppercase font-bold text-glow">
+                  Special Thanks to
+                </span>
+                <div className="h-px w-32 bg-white/20" />
               </div>
+              <span className="text-[12px] font-mono text-white/60 tracking-[0.8em] uppercase font-bold italic">
+                Our Principal Sponsors
+              </span>
+            </div>
+          </div>
 
-              {/* Image Row */}
-              <div className="flex items-center justify-center gap-16">
-                <div className="w-[200px] flex justify-center">
-                  <img
-                    src="/serpapi-logo-white.png"
-                    alt="serpAPI"
-                    className="h-35 w-auto"
-                  />
-                </div>
-                <div className="w-[200px] flex justify-center">
-                  <img
-                    src="/leap_studios.svg"
-                    alt="leap_studios"
-                    className="h-50 w-auto brightness-0 invert"
-                  />
-                </div>
+          {/* ── SPONSORS TIER ── */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-32 mb-24">
+            {/* SerpAPI */}
+            <div className="flex flex-col items-center gap-6 group">
+              <div className="h-32 md:h-48 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                <img
+                  src="/serpapi-logo-white.png"
+                  alt="SerpAPI"
+                  className="h-full w-auto max-w-[130px] object-contain"
+                />
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-12 h-px bg-white/10 group-hover:w-20 transition-all duration-500" />
+                <span className="text-[10px] font-mono text-white/30 tracking-[0.6em] uppercase">
+                  Powered By
+                </span>
               </div>
             </div>
-            <p className="text-[16px] font-mono text-white/40 tracking-[0.6em] uppercase mt-16">
+
+            {/* Leap Studios */}
+            <div className="flex flex-col items-center gap-6 group">
+              <div className="h-32 md:h-48 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                <img
+                  src="/leap_studios.svg"
+                  alt="Leap Studios"
+                  className="h-full w-auto max-w-[320px] object-contain brightness-0 invert"
+                />
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-12 h-px bg-white/10 group-hover:w-20 transition-all duration-500" />
+                <span className="text-[10px] font-mono text-white/30 tracking-[0.6em] uppercase">
+                  Venue Partner
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* ── COMMUNITY PARTNERS DIVIDER ── */}
+          <div className="flex items-center gap-6 mb-16">
+            <div className="flex-1 h-px bg-white/10" />
+            <span className="text-[12px] font-mono text-white/60 tracking-[0.6em] uppercase shrink-0 font-bold">
               Community Partners
-            </p>
-            <div>
-              <div className="flex items-center gap-4 justify-center">
-                <img
-                  src="enov.svg"
-                  alt="e:Novators"
-                  className="h-45 w-auto mt-0 brightness-0 invert"
-                />
-                <img
-                  src="data_engineering.svg"
-                  alt="Data Engineering Pilipinas"
-                  className="h-45 w-auto mt-0 brightness-0 invert"
-                />
-                <img
-                  src="rotary.svg"
-                  alt="Rotary Club of Fort Bonifacio Global City"
-                  className="h-45 w-auto mt-0 brightness-0 invert"
-                />
-              </div>
-            </div>
+            </span>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          {/* ── COMMUNITY PARTNERS — enlarged tier ── */}
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-80">
+            <img
+              src="enov.svg"
+              alt="e:Novators"
+              className="h-20 md:h-24 w-auto brightness-0 invert transition-transform duration-500 hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="DEP.png"
+              alt="Data Engineering Pilipinas"
+              className="h-20 md:h-24 w-auto brightness-0 invert transition-transform duration-500 hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="rotary.svg"
+              alt="Rotary Club of Fort Bonifacio Global City"
+              className="h-20 md:h-24 w-auto brightness-0 invert transition-transform duration-500 hover:scale-110"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </ScrollObserver>

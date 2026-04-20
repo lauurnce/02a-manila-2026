@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { HERO, LOGISTICS } from "@/lib/data";
 
 /**
  * HeroPage Component
@@ -235,9 +236,9 @@ export function HeroPage() {
             )}
           >
             <p className="text-xl md:text-2xl tracking-tight uppercase flex items-center gap-4">
-              <span>02A</span>
+              <span>{LOGISTICS.eventSubtitle.split(' / ')[0]}</span>
               <span className="text-white/20">/</span>
-              <span>GLOBAL BUILD WEEK</span>
+              <span>{LOGISTICS.eventSubtitle.split(' / ')[1]}</span>
             </p>
           </div>
 
@@ -258,7 +259,7 @@ export function HeroPage() {
                   "linear-gradient(to right, white 20%, rgba(255,255,255,0.2) 100%)",
               }}
             >
-              Zero to Agent
+              {HERO.title}
             </h1>
           </div>
 
@@ -272,9 +273,7 @@ export function HeroPage() {
             )}
           >
             <p className="text-sm md:text-base leading-relaxed tracking-wide">
-              The ultimate 7-day sprint to build, deploy, and scale autonomous
-              agents. Join the world's most ambitious builders in Manila for a
-              week of pure execution.
+              {HERO.description}
             </p>
           </div>
 
@@ -288,7 +287,7 @@ export function HeroPage() {
           >
             {/* Glassmorphic Shimmer CTA Button with RGB Accent */}
             <a
-              href="https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw"
+              href={LOGISTICS.registrationUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-block px-12 py-5 bg-white/5 text-white font-black text-[11px] tracking-[0.4em] uppercase rounded-sm border border-white/10 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:bg-white/10 no-underline"
@@ -303,7 +302,7 @@ export function HeroPage() {
               {/* Button Shimmer Effect */}
               <div className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-[shimmer_2s_infinite] pointer-events-none" />
 
-              <span className="relative z-10">REGISTER NOW</span>
+              <span className="relative z-10">{HERO.ctaText}</span>
             </a>
 
             <div className="flex flex-col items-start gap-4">
@@ -445,7 +444,7 @@ export function HeroPage() {
             {/* Hover Tooltip Label */}
             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
               <span className="text-[10px] font-mono text-white/40 tracking-[0.3em] uppercase font-bold">
-                [AGENT_SEED_V0.1]
+                {HERO.tagline}
               </span>
             </div>
           </div>
