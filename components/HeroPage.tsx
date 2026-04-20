@@ -142,18 +142,21 @@ export function HeroPage() {
         {/* Large Elliptical Glow — top specific for this section */}
         <div
           className="absolute top-[-20%] left-[-10%] w-[120%] h-[140%] opacity-30 rotate-12"
-          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 70%)' }}
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.15) 0%, transparent 70%)",
+          }}
         />
 
         {/* Large Decorative Wireframe Triangles */}
         <div className="absolute inset-0 opacity-[0.05]">
-          <div 
+          <div
             className="absolute top-1/4 left-1/4 w-[400px] h-[400px] border border-white/20 rotate-[15deg]"
-            style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
+            style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
           />
-          <div 
+          <div
             className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] border border-white/10 -rotate-[12deg]"
-            style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
+            style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
           />
         </div>
 
@@ -199,9 +202,7 @@ export function HeroPage() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-20 py-20 transform scale-90 transition-transform duration-700">
         {/* Left Content: Text */}
-        <div
-          className="flex flex-col items-start transition-transform duration-300 ease-out flex-1"
-        >
+        <div className="flex flex-col items-start transition-transform duration-300 ease-out flex-1">
           {/* Top Branding Cluster */}
           <div
             className={cn(
@@ -212,10 +213,17 @@ export function HeroPage() {
             )}
           >
             {/* The Unified Brand Triangle */}
-            <div 
+            <div
               className="w-10 h-10 bg-white shadow-[0_0_25px_rgba(255,255,255,0.4)]"
-              style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
+              style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
             />
+            <div>
+              <img
+                src="/v0-icon.svg"
+                alt="v0 Icon"
+                className="ml-4 w-15 h-15 invert "
+              />
+            </div>
           </div>
 
           <div
@@ -227,7 +235,7 @@ export function HeroPage() {
             )}
           >
             <p className="text-xl md:text-2xl tracking-tight uppercase flex items-center gap-4">
-              <span style={{ color: 'var(--color-brand-red)' }}>02A</span>
+              <span>02A</span>
               <span className="text-white/20">/</span>
               <span>GLOBAL BUILD WEEK</span>
             </p>
@@ -296,12 +304,6 @@ export function HeroPage() {
               <div className="absolute inset-0 w-full h-full bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-[shimmer_2s_infinite] pointer-events-none" />
 
               <span className="relative z-10">REGISTER NOW</span>
-              
-              {/* Small accent triangle */}
-              <div 
-                className="absolute top-1 right-1 w-2 h-2 bg-white/20"
-                style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
-              />
             </a>
 
             <div className="flex flex-col items-start gap-4">
@@ -309,10 +311,10 @@ export function HeroPage() {
                 Powered by
               </span>
               <div className="flex items-center gap-5 group cursor-pointer">
-                <div className="relative h-14 w-44 translate-y-1">
+                <div className="relative h-20 w-44 translate-y-1">
                   {/* Base Logo (White) */}
                   <img
-                    src="/serpai-logo-white.png"
+                    src="/serpapi-logo-white.png"
                     alt="SerpAPI"
                     className="absolute inset-0 h-full w-auto opacity-70 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none"
                   />
@@ -320,12 +322,12 @@ export function HeroPage() {
                   <div
                     className="absolute inset-0 h-full w-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-r from-blue-500 to-purple-500"
                     style={{
-                      maskImage: "url('/serpai-logo-white.png')",
-                      WebkitMaskImage: "url('/serpai-logo-white.png')",
+                      maskImage: "url('/serpapi-logo-white.png')",
+                      WebkitMaskImage: "url('/serpapi-logo-white.png')",
                       maskSize: "contain",
                       WebkitMaskSize: "contain",
                       maskRepeat: "no-repeat",
-                      WebkitMaskRepeat: "no-repeat"
+                      WebkitMaskRepeat: "no-repeat",
                     }}
                   />
                 </div>
@@ -385,9 +387,24 @@ export function HeroPage() {
                 >
                   {/* RGB Refractive Aura */}
                   <div className="absolute inset-[-20px] opacity-40 blur-2xl animate-pulse">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-brand-red opacity-30" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-brand-green opacity-30 rotate-[120deg]" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-brand-blue opacity-30 rotate-[240deg]" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
+                    <div
+                      className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-brand-red opacity-30"
+                      style={{
+                        clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                      }}
+                    />
+                    <div
+                      className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-brand-green opacity-30 rotate-[120deg]"
+                      style={{
+                        clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                      }}
+                    />
+                    <div
+                      className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-brand-blue opacity-30 rotate-[240deg]"
+                      style={{
+                        clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                      }}
+                    />
                   </div>
 
                   {/* Glow Backdrop */}
@@ -404,8 +421,18 @@ export function HeroPage() {
                     }}
                   >
                     {/* Inner RGB "Chromatic Aberration" look */}
-                    <div className="absolute inset-0 bg-brand-red/10 -translate-x-px translate-y-px" style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }} />
-                    <div className="absolute inset-0 bg-brand-blue/10 translate-x-px -translate-y-px" style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }} />
+                    <div
+                      className="absolute inset-0 bg-brand-red/10 -translate-x-px translate-y-px"
+                      style={{
+                        clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                      }}
+                    />
+                    <div
+                      className="absolute inset-0 bg-brand-blue/10 translate-x-px -translate-y-px"
+                      style={{
+                        clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                      }}
+                    />
                   </div>
                 </div>
               </div>

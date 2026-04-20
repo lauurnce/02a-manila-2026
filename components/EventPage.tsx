@@ -65,21 +65,20 @@ const eventHighlights = [
 
 const featuredSpeakers = [
   {
-    id: 1,
+    id: 2,
     name: "Werald Opolento",
     role: "Speaker",
-    topic: "Advanced AI Agents",
+    topic: "What I've built with v0",
     bio: "Werald specializes in building cutting-edge autonomous agents and LLM orchestration. Catch his session as he dives deep into practical tool-use and continuous reasoning loops for actual production environments.",
     image: "/team/werald-opolento.jpg",
   },
   {
-    id: 2,
+    id: 1,
     name: "Marvin Erosa",
-    role: "Special Guest",
-    topic: "To Be Announced",
-    bio: "We have an incredible special guest speaker flying in to share insights on the future of AI and developer tooling. Stay tuned for the official announcement!",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    role: "Speaker",
+    topic: "Intro to Vercel & v0",
+    bio: "A software engineer at Accenture and v0 Ambassador, he is a hackathon champion and builder of impactful systems—from autonomous driving and EV prototypes to environmental monitoring. He also leads and builds communities like ICPEP, CyberPH, PUP Hygears, and GDG, empowering the next generation of engineers.",
+    image: "/team/marvin_erosa.jpg",
   },
 ];
 
@@ -134,11 +133,13 @@ export function EventPage() {
       </div>
       <ScrollObserver>
         <div className="mb-16 text-center">
-          <SectionTitle 
+          <SectionTitle
             className="text-4xl md:text-6xl lg:text-7xl font-sans font-medium tracking-tight text-white mb-2"
             style={{
-              WebkitMaskImage: "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
-              maskImage: "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
+              maskImage:
+                "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
             }}
           >
             Event Details
@@ -161,7 +162,7 @@ export function EventPage() {
               {/* Corner HUD Ornaments */}
               <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-white/40 transition-colors" />
               <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-white/40 transition-colors" />
-              
+
               <div className="mb-6 opacity-60 group-hover:opacity-100 transition-opacity transform group-hover:scale-110 duration-500">
                 {highlight.icon}
               </div>
@@ -176,7 +177,9 @@ export function EventPage() {
                     key={idx}
                     className="flex items-start text-[13px] text-white/50 leading-relaxed font-mono tracking-tight group-hover:text-white/70 transition-colors"
                   >
-                    <span className="mr-3 text-white/20 group-hover:text-white/40 transition-colors">//</span>
+                    <span className="mr-3 text-white/20 group-hover:text-white/40 transition-colors">
+                      //
+                    </span>
                     {item}
                   </li>
                 ))}
@@ -192,9 +195,17 @@ export function EventPage() {
         <div ref={sectionRef} className="mt-32 h-auto md:h-[600px]">
           <style jsx>{`
             @keyframes shimmer-fast {
-              0% { transform: translateX(-100%); opacity: 0; }
-              50% { opacity: 0.5; }
-              100% { transform: translateX(100%); opacity: 0; }
+              0% {
+                transform: translateX(-100%);
+                opacity: 0;
+              }
+              50% {
+                opacity: 0.5;
+              }
+              100% {
+                transform: translateX(100%);
+                opacity: 0;
+              }
             }
             .animate-shimmer-fast {
               animation: shimmer-fast 1.5s infinite;
@@ -207,7 +218,10 @@ export function EventPage() {
               <div className="h-10 flex items-center gap-4 mb-2">
                 <div className="h-px w-8 bg-white/20" />
                 <div className="text-[10px] font-mono text-white/40 tracking-[0.3em] uppercase flex items-center gap-2 group cursor-default">
-                  <span className="text-white/60 group-hover:text-white transition-colors">▲</span> [SESSION_PREVIEW:{" "}
+                  <span className="text-white/60 group-hover:text-white transition-colors">
+                    ▲
+                  </span>{" "}
+                  [SESSION_PREVIEW:{" "}
                   {String(currentSpeaker + 1).padStart(2, "0")}/
                   {String(featuredSpeakers.length).padStart(2, "0")}]
                 </div>
@@ -232,7 +246,9 @@ export function EventPage() {
               <div className="h-10 flex items-center gap-4 mb-6">
                 <div className="px-3 py-1 border border-white/10 bg-white/5 rounded-sm text-[10px] font-mono text-white/50 tracking-widest uppercase relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer-fast" />
-                  <span className="relative">{featuredSpeakers[currentSpeaker].role}</span>
+                  <span className="relative">
+                    {featuredSpeakers[currentSpeaker].role}
+                  </span>
                 </div>
                 <div className="text-[10px] font-mono text-white/60 tracking-widest uppercase flex items-center gap-2">
                   <span className="text-white/20">•</span>
@@ -252,7 +268,7 @@ export function EventPage() {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={prevSpeaker}
-                    className="group relative flex items-center gap-3 px-6 py-3 border border-white/10 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 rounded-sm overflow-hidden w-28 justify-center"
+                    className="group relative flex items-center gap-3 px-6 py-3 border border-white/10 hover:border-white/20 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 rounded-sm overflow-hidden w-36 justify-center"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-shimmer-fast" />
                     <ChevronLeft className="w-4 h-4 text-white/40 group-hover:text-white transition-colors relative z-10" />
@@ -273,7 +289,6 @@ export function EventPage() {
                 </div>
               </div>
             </div>
-
             {/* Right Column: Image Perspective (The "Artifact" - Fixed Size) */}
             <div className="w-full md:w-1/2 group relative flex justify-end pt-12 md:pt-20">
               <div className="relative w-full max-w-[500px] aspect-square border border-white/10 rounded-sm overflow-hidden bg-black shadow-[0_0_50px_rgba(255,255,255,0.02)] transition-transform duration-700 hover:scale-[1.01]">
@@ -287,8 +302,14 @@ export function EventPage() {
                 {/* Scanline Animation */}
                 <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-white/10 blur-[1px] animate-[scan-down_4s_linear_infinite]" />
-                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-                       style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+                  <div
+                    className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle, #fff 1px, transparent 1px)",
+                      backgroundSize: "20px 20px",
+                    }}
+                  />
                 </div>
 
                 <img
@@ -297,16 +318,20 @@ export function EventPage() {
                   alt={featuredSpeakers[currentSpeaker].name}
                   className={cn(
                     "w-full h-full object-cover transition-all duration-700 ease-in-out animate-in fade-in zoom-in-105",
-                    showColor ? "grayscale-0 opacity-100" : "grayscale opacity-80"
+                    showColor
+                      ? "grayscale-0 opacity-100"
+                      : "grayscale opacity-80",
                   )}
                 />
-                
+
                 {/* Inner Bezel Glow */}
                 <div className="absolute inset-0 border border-white/5 rounded-sm pointer-events-none shadow-[inset_0_0_30px_rgba(0,0,0,0.8)]" />
-                
+
                 {/* Floating Triangle Icon overlay */}
                 <div className="absolute bottom-6 left-6 p-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-sm">
-                  <div className="text-white/60 animate-pulse text-[10px]">▲</div>
+                  <div className="text-white/60 animate-pulse text-[10px]">
+                    ▲
+                  </div>
                 </div>
               </div>
             </div>
