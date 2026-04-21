@@ -4,35 +4,143 @@ import { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Github, Linkedin } from "lucide-react";
 import { Section, SectionTitle, ScrollObserver } from "./Layout";
-import { TEAM } from "@/lib/data";
 
 
-// ─── TYPES ──────────────────────────────────────────────────────
-interface TeamMember {
-  name: string;
-  role: string;
-  initials: string;
-  photo?: string;
-  social: {
-    linkedin?: string;
-    github?: string;
-  };
-}
+// ─── ORGANIZATION DIRECTORS ─────────────────────────────────────
+const directors = [
+  {
+    name: "France Khalil",
+    role: "Organization Director Head",
+    initials: "FK",
+    photo: "/team/france-khalil.jpg",
+    social: { linkedin: "https://www.linkedin.com/in/fkromero", github: "https://github.com/FranceKR" },
+  },
+  {
+    name: "Marvin Barrios",
+    role: "Organization Director Head",
+    initials: "MB",
+    photo: "/team/marvin-barrios.PNG",
+    social: { linkedin: "https://www.linkedin.com/in/marvinbarrios/" },
+  },
+];
 
-// cspell:disable
-const directors = TEAM.directors;
-const organizers = TEAM.organizers;
-// cspell:enable
+// ─── ORGANIZING TEAM (grouped by department) ────────────────────
+const organizers = [
+  // Technical
+  {
+    name: "Lawrence Panes",
+    role: "Technical Head",
+    initials: "LP",
+    photo: "/team/lawrence-panes.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/lawrencepanes/", github: "https://github.com/lauurnce" },
+  },
+  {
+    name: "Dave Aillerr Rivas",
+    role: "Technical Head",
+    initials: "DR",
+    photo: "/team/dave-rivas.jpg",
+    social: { linkedin: "https://www.linkedin.com/in/dave-aillerr-rivas/", github: "https://github.com/daveaillerr" },
+  },
+  // Logistics
+  {
+    name: "Fahad Hadji Esmael",
+    role: "Logistics Head",
+    initials: "FE",
+    photo: "/team/fahad-esmael.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/fahad-hadji-esmael-15322b31b/", github: "https://github.com/Hanji-exe" },
+  },
+  {
+    name: "Alpie Obas",
+    role: "Logistics Officer",
+    initials: "AO",
+    photo: "/team/alpie-obas.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/agobas", github: "https://github.com/IKiousChase" },
+  },
+  {
+    name: "Arjhine Ty",
+    role: "Logistics Officer",
+    initials: "AT",
+    photo: "/team/arjhine-ty.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/arrochi", github: "https://github.com/arrogance231" },
+  },
+  {
+    name: "Nico Ome",
+    role: "Logistics Officer",
+    initials: "NO",
+    photo: "/team/nico-ome.PNG",
+    social: { linkedin: "https://www.linkedin.com/in/angome" },
+  },
+  // Registration
+  {
+    name: "Mary Jean Navarro",
+    role: "Registration Head",
+    initials: "MN",
+    photo: "/team/mary-jean-navarro.png",
+    social: { linkedin: "https://www.linkedin.com/in/goingmeri/", github: "https://github.com/goingmeri" },
+  },
+  {
+    name: "Lanz Kristoffer G. Mañalac",
+    role: "Registration Officer",
+    initials: "LM",
+    photo: "/team/lanz-manalac.JPG",
+    social: { linkedin: "https://ph.linkedin.com/in/lanz-kristoffer-ma%C3%B1alac-b485b3327", github: "https://github.com/lanzmanalac" },
+  },
+  {
+    name: "Nick Estole",
+    role: "Registration Officer",
+    initials: "NE",
+    photo: "/team/nick-estole.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/goingmeri/", github: "https://github.com/goingmeri" },
+  },
+  // Media, Marketing & External
+  {
+    name: "Nate Dy",
+    role: "Media & Marketing Head",
+    initials: "ND",
+    photo: "/team/nate-dy.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/nate-peralta/", github: "https://github.com/peraltanate" },
+  },
+  {
+    name: "Ven Murillo",
+    role: "Media & Marketing Officer",
+    initials: "VM",
+    photo: "/team/ven-murillo.JPG",
+    social: { linkedin: "https://www.linkedin.com/in/ven-vincent-murillo" },
+  },
+  {
+    name: "Will Vincent Parrone",
+    role: "External Head",
+    initials: "WP",
+    photo: "/team/will-parrone.jpeg",
+    social: { linkedin: "https://www.linkedin.com/in/will-vincent-parrone-8763311ba/", github: "https://github.com/KyahWill" },
+  },
+  // Emcees / Hosts
+  {
+    name: "Anam Iqbal",
+    role: "Emcee / Host",
+    initials: "AI",
+    photo: "/team/anam-iqbal.png",
+    social: { linkedin: "https://www.linkedin.com/in/anam-mazhar-iqbal-8483601ba?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "#" },
+  },
+  {
+    name: "Larr Gallos",
+    role: "Emcee / Host",
+    initials: "LG",
+    photo: "/team/larr-gallos.jpg",
+    social: { linkedin: "#", github: "#" },
+  },
+];
+
 
 function TeamCard({ member, isLarge = false }: { member: TeamMember; isLarge?: boolean }) {
   return (
-    <div className={`group relative bg-[#0a0a0a] border border-white/5 rounded-sm transition-all duration-300 hover:bg-white/3 hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.02)] flex items-center gap-6 overflow-hidden ${isLarge ? "p-8" : "p-6"}`}>
+    <div className={`group relative bg-[#0a0a0a] border border-white/5 rounded-sm transition-all duration-300 hover:bg-white/[0.03] hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.02)] flex items-center gap-6 overflow-hidden ${isLarge ? "p-8" : "p-6"}`}>
       {/* Corner HUD Ornaments */}
       <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 group-hover:border-white/40 transition-colors" />
       <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 group-hover:border-white/40 transition-colors" />
 
       {/* Scanline Effect */}
-      <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/2 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
 
       {/* Large circular photo */}
       <Avatar className="w-24 h-24 shrink-0 bg-white/10 border border-white/10 group-hover:border-white/40 transition-colors">
