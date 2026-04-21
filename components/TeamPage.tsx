@@ -32,7 +32,7 @@ const directors = [
     name: "Marvin Barrios",
     role: "Organization Director Head",
     initials: "MB",
-    photo: "/team/marvin-barrios.PNG",
+    photo: "/team/marvin-barrios.png",
     social: { linkedin: "https://www.linkedin.com/in/marvinbarrios/" },
   },
 ];
