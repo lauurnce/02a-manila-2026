@@ -104,7 +104,7 @@ const organizers = [
     role: "Registration Officer",
     initials: "NE",
     photo: "/team/nick-estole.JPG",
-    social: { linkedin: "https://www.linkedin.com/in/goingmeri/", github: "https://github.com/goingmeri" },
+    social: { linkedin: "", github: "" },
   },
   // Media, Marketing & External
   {
@@ -141,7 +141,7 @@ const organizers = [
     role: "Emcee / Host",
     initials: "LG",
     photo: "/team/larr-gallos.jpg",
-    social: { linkedin: "#", github: "#" },
+    social: {},
   },
 ];
 
@@ -183,7 +183,7 @@ function TeamCard({ member, isLarge = false }: { member: TeamMember; isLarge?: b
 
         {/* Clickable Social Links */}
         <div className={`flex items-center gap-3 ${isLarge ? "mt-2" : "mt-1"}`}>
-          {member.social.linkedin && (
+          {member.social?.linkedin && (
             <a
               href={member.social.linkedin}
               target="_blank"
