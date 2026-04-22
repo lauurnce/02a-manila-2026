@@ -3,7 +3,7 @@
     "eventName": "Zero to Agent",
     "eventSubtitle": "02A / GLOBAL BUILD WEEK",
     "chapter": "Manila Chapter",
-    "dates": "April 20-27, 2026",
+    "dates": "April 24 - May 3, 2026",
     "registrationUrl": "https://luma.com/bho2efmh?utm_id=97758_v0_s00_e0_tv0&fbclid=IwY2xjawRQFHxleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeBYtzdx3cSoyVWB67R5ocjH8vVv2zuhGntHEy_f1jJMFCiPud5G2LHo4gom4_aem_FYXDh08gPP2NqtKIYgjSyw",
     "venue": {
       "name": "LEAP Studios",
@@ -14,13 +14,13 @@
   "hero": {
     "tagline": "v0.1_Manila",
     "title": "Zero to Agent",
-    "description": "The ultimate 7-day sprint to build, deploy, and scale autonomous agents. Join the world's most ambitious builders in Manila for a week of pure execution.",
-    "ctaText": "REGISTER NOW"
+    "description": "The ultimate 10-day sprint to build, deploy, and scale autonomous agents. Join the world's most ambitious builders in Manila for a week of pure execution.",
+    "ctaText": "Join now"
   },
   "about": {
     "intelLabel": "[MISSION_INTELLIGENCE]",
     "missionTitle": "Zero to Agent Manila",
-    "missionDescription": "A 7-day high-performance sprint designed for the next generation of builders. synchronizing across global borders to architect, develop, and deploy autonomous intelligence at scale.",
+    "missionDescription": "A 10-day high-performance sprint designed for the next generation of builders. synchronizing across global borders to architect, develop, and deploy autonomous intelligence at scale.",
     "stats": [
       {
         "label": "SYS.01",
@@ -78,10 +78,18 @@
     ],
     "speakers": [
       {
-        "id": 1,
+       "id": 1,
+        "name": "Marvin Erosa",
+        "role": "Speaker: v0 Ambassador",
+        "topic": "From Zero to v0: Turning Ideas into Working Prototypes",
+        "bio": "A software engineer at Accenture and v0 Ambassador, he is a hackathon champion and builder of impactful systems—from autonomous driving and EV prototypes to environmental monitoring.",
+        "image": "/team/marvin_erosa.jpg"
+      },
+      {
+        "id": 2,
         "name": "Werald Opolento",
         "role": "Speaker: Web Developer",
-        "topic": "From Zero to v0: Building Real Projects and AI Agents with v0 + Vercel",
+        "topic": "What I've built with v0!",
         "bio": "Werald specializes in building cutting-edge autonomous agents and LLM orchestration. Catch his session as he dives deep into practical tool-use and continuous reasoning loops for actual production environments.",
         "image": "/team/werald-opolento.jpg"
       },
