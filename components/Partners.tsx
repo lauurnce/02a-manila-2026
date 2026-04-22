@@ -2,7 +2,6 @@
 
 import { Section, SectionTitle, ScrollObserver } from "./Layout";
 
-
 // ─── MAIN COMPONENT ──────────────────────────────────────────────
 export function Partners() {
   return (
@@ -48,70 +47,69 @@ export function Partners() {
                 </span>
                 <div className="h-px w-32 bg-white/20" />
               </div>
-              <span className="text-[12px] font-mono text-white/60 tracking-[0.8em] uppercase font-bold italic">
-                Our Principal Sponsors
-              </span>
             </div>
           </div>
 
           {/* ── SPONSORS TIER ── */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-32 mb-24">
-            {/* Swarm */}
-            <div className="flex flex-col items-center group">
-              <div className="h-32 md:h-40 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-                <img
-                  src="/Swarm.png"
-                  alt="Swarm"
-                  className="h-full w-auto max-w-[110px] object-contain"
-                />
-              </div>
-              <span className="text-xl md:text-2xl font-bold text-white tracking-[0.2em] uppercase -mt-2">
-                Swarm
-              </span>
-            </div>
-
+          <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-42 mb-16">
             {/* SerpAPI */}
             <div className="flex flex-col items-center group">
-              <div className="h-32 md:h-40 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+              <a href="https://serpapi.com/">
                 <img
                   src="/serpapi-logo-white.png"
                   alt="SerpAPI"
-                  className="h-full w-auto max-w-[130px] object-contain"
+                  className="h-32 md:h-40 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
                 />
-              </div>
+              </a>
             </div>
 
             {/* Leap Studios */}
             <div className="flex flex-col items-center group">
-              <div className="h-32 md:h-40 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+              <a href="https://leapstudios.ph/">
                 <img
                   src="/leap_studios.svg"
                   alt="Leap Studios"
-                  className="h-full w-auto max-w-[340px] object-contain brightness-0 invert"
+                  className="h-42 md:h-48 w-auto object-contain brightness-0 invert transition-transform duration-500 group-hover:scale-110"
                 />
-              </div>
-              <div className="flex flex-col items-center gap-1 -mt-2">
-                <div className="w-12 h-px bg-white/20 group-hover:w-20 transition-all duration-500" />
-                <span className="text-[10px] font-mono text-white/60 tracking-[0.4em] uppercase font-bold text-glow">
+              </a>
+              <div className="flex flex-col items-center gap-1 mt-2">
+                <div className="w-42 h-px bg-white/20 group-hover:w-20 transition-all duration-500" />
+                <span className="text-[12px] font-mono text-white/60 tracking-[0.4em] uppercase font-bold text-glow">
                   Venue Partner
                 </span>
               </div>
             </div>
 
             {/* Rotary */}
-            <div className="flex flex-col items-center group md:-ml-8">
-              <div className="h-32 md:h-40 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+            <div className="flex flex-col items-center group -ml-24 md:-ml-36 -mr-18">
+              <a href="https://www.facebook.com/RCFBGC/">
                 <img
                   src="rotary.svg"
                   alt="Rotary Club of Fort Bonifacio Global City"
-                  className="h-full w-auto max-w-[240px] object-contain brightness-0 invert"
+                  className="h-32 md:h-40 w-auto object-contain brightness-0 invert transition-transform duration-500 group-hover:scale-110"
                 />
-              </div>
+              </a>
             </div>
           </div>
 
+          {/* Swarm */}
+          <div className="flex flex-col items-center group">
+            <div className="h-22 md:h-30 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+              <a href="https://www.swarm.work/">
+                <img
+                  src="/Swarm.png"
+                  alt="Swarm"
+                  className="h-full w-auto max-w-[90px] object-contain"
+                />
+              </a>
+            </div>
+            <span className="text-xl md:text-2xl font-bold text-white tracking-[0.2em] uppercase -mt-2">
+              Swarm
+            </span>
+          </div>
+
           {/* ── COMMUNITY PARTNERS DIVIDER ── */}
-          <div className="flex items-center gap-6 mb-16">
+          <div className="flex items-center gap-6 mb-16 mt-16">
             <div className="flex-1 h-px bg-white/10" />
             <span className="text-[12px] font-mono text-white/60 tracking-[0.6em] uppercase shrink-0 font-bold">
               Community Partners
@@ -121,20 +119,24 @@ export function Partners() {
 
           {/* ── COMMUNITY PARTNERS — enlarged tier ── */}
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-80">
-            <img
-              src="enov.svg"
-              alt="e:Novators"
-              className="h-20 md:h-24 w-auto brightness-0 invert transition-transform duration-500 hover:scale-110"
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              src="DEP.png"
-              alt="Data Engineering Pilipinas"
-              className="h-20 md:h-24 w-auto brightness-0 invert transition-transform duration-500 hover:scale-110"
-              loading="lazy"
-              decoding="async"
-            />
+            <a href="https://www.facebook.com/share/1J4MJVAjD2/">
+              <img
+                src="enov.svg"
+                alt="e:Novators"
+                className="h-20 md:h-24 w-auto brightness-0 invert transition-transform duration-500 hover:scale-110"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a href="https://www.facebook.com/share/1EGepYkZ2Y/">
+              <img
+                src="DEP.png"
+                alt="Data Engineering Pilipinas"
+                className="h-20 md:h-24 w-auto brightness-0 invert transition-transform duration-500 hover:scale-110"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
           </div>
         </div>
       </ScrollObserver>
