@@ -51,7 +51,7 @@ export function Partners() {
           </div>
 
           {/* ── SPONSORS TIER ── */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-42 mb-16">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-32 mb-16">
             {/* SerpAPI */}
             <div className="flex flex-col items-center group">
               <a href="https://serpapi.com/">
@@ -80,8 +80,22 @@ export function Partners() {
               </div>
             </div>
 
+            {/* FinShark */}
+            <div className="flex flex-col items-center group">
+              <a href="https://www.finsharc.com/">
+                <img
+                  src="finsharc.png"
+                  alt="FinShark"
+                  className="h-32 md:h-40 w-auto object-contain brightness-0 invert transition-transform duration-500 group-hover:scale-110"
+                />
+              </a>
+            </div>
+          </div>
+
+          {/* Rotary & Swarm - Pyramid Bottom */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-32 mb-16 md:-ml-32">
             {/* Rotary */}
-            <div className="flex flex-col items-center group -ml-24 md:-ml-36 -mr-18">
+            <div className="flex flex-col items-center group">
               <a href="https://www.facebook.com/RCFBGC/">
                 <img
                   src="rotary.svg"
@@ -90,22 +104,22 @@ export function Partners() {
                 />
               </a>
             </div>
-          </div>
 
-          {/* Swarm */}
-          <div className="flex flex-col items-center group">
-            <div className="h-22 md:h-30 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-              <a href="https://www.swarm.work/">
-                <img
-                  src="/Swarm.png"
-                  alt="Swarm"
-                  className="h-full w-auto max-w-[90px] object-contain"
-                />
-              </a>
+            {/* Swarm */}
+            <div className="flex flex-col items-center group">
+              <div className="h-22 md:h-30 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                <a href="https://www.swarm.work/">
+                  <img
+                    src="/Swarm.png"
+                    alt="Swarm"
+                    className="h-full w-auto max-w-[80px] object-contain"
+                  />
+                </a>
+              </div>
+              <span className="text-xl md:text-2xl font-bold text-white tracking-[0.2em] uppercase -mt-2">
+                Swarm
+              </span>
             </div>
-            <span className="text-xl md:text-2xl font-bold text-white tracking-[0.2em] uppercase -mt-2">
-              Swarm
-            </span>
           </div>
 
           {/* ── COMMUNITY PARTNERS DIVIDER ── */}
