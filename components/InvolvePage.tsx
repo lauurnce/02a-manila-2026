@@ -17,14 +17,15 @@ const involvementOptions = GET_INVOLVED.options;
 export function InvolvePage() {
   return (
     <Section id="get-involved" className="relative overflow-hidden">
-
       <ScrollObserver>
         <div className="mb-16 text-center">
-          <SectionTitle 
+          <SectionTitle
             className="text-4xl md:text-6xl lg:text-7xl font-sans font-medium tracking-tight text-white mb-2"
             style={{
-              WebkitMaskImage: "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
-              maskImage: "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
+              maskImage:
+                "linear-gradient(to bottom, white 50%, rgba(255,255,255,0.2) 100%)",
             }}
           >
             Get Involved
@@ -32,7 +33,7 @@ export function InvolvePage() {
           <div className="flex items-center justify-center gap-4 mt-4">
             <div className="h-px w-12 bg-white/10" />
             <span className="text-[10px] font-mono text-white/40 tracking-[0.4em] uppercase">
-              JOIN THE MISSION 
+              JOIN THE MISSION
             </span>
             <div className="h-px w-12 bg-white/10" />
           </div>
@@ -59,36 +60,6 @@ export function InvolvePage() {
               <div className="absolute inset-0 bg-linear-to-tr from-white/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             </div>
           ))}
-        </div>
-
-        {/* CTA Register Section — dark, original style */}
-        <div className="text-center space-y-12 py-16 border-t border-white/5">
-          <div className="max-w-3xl mx-auto space-y-4">
-            <div className="text-[10px] font-mono text-white/30 tracking-[0.5em] uppercase">
-              // Deployment Ready //
-            </div>
-            <p className="text-xl md:text-2xl text-white/60 font-sans tracking-tight leading-relaxed">
-              Ready to join the global AI agent building movement? Register now
-              and be part of something incredible.
-            </p>
-          </div>
-
-          <div className="flex justify-center">
-            <button
-              onClick={() =>
-                window.open(
-                  LOGISTICS.registrationUrl,
-                  "_blank",
-                )
-              }
-              className="group relative inline-flex items-center gap-4 px-12 py-5 bg-white text-black font-mono font-bold text-[11px] tracking-[0.4em] uppercase rounded-sm overflow-hidden transition-all duration-300 hover:bg-white/90 hover:scale-[1.03] cursor-pointer"
-            >
-              {/* Shimmer */}
-              <div className="absolute inset-0 bg-linear-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none" />
-              <span className="relative z-10">REGISTER NOW</span>
-              <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
-          </div>
         </div>
       </ScrollObserver>
     </Section>
